@@ -33,3 +33,7 @@ application {
     // Define the main class for the application.
     mainClassName = "com.dzapp.ktboggle.AppKt"
 }
+
+val run by tasks.getting(JavaExec::class) {
+    standardInput = System.`in`
+}

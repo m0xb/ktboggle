@@ -5,8 +5,7 @@ import kotlin.test.*
 class AppTest {
 
     @Test fun testMakeSquareBoard() {
-        val classUnderTest = BoggleGame()
-        val board = classUnderTest.makeSquareBoard("XBOY")
+        val board = BoggleGame.makeSquareBoard("XBOY")
 
         assertEquals(board.letters[0][0], 'X', "app should have a greeting")
         assertEquals(board.letters[0][1], 'B', "app should have a greeting")
@@ -15,16 +14,14 @@ class AppTest {
     }
 
     @Test fun test2x2HasWordOneLetterDoesntExist() {
-        val classUnderTest = BoggleGame()
-        val board = classUnderTest.makeSquareBoard("EYES")
+        val board = BoggleGame.makeSquareBoard("EYES")
 
         assertFalse(board.hasWord("A"))
         assertFalse(board.hasWord("D"))
     }
 
     @Test fun test2x2HasWordOneLetterDoesExist() {
-        val classUnderTest = BoggleGame()
-        val board = classUnderTest.makeSquareBoard("EYES")
+        val board = BoggleGame.makeSquareBoard("EYES")
 
         assertTrue(board.hasWord("E"))
         assertTrue(board.hasWord("Y"))
@@ -32,8 +29,7 @@ class AppTest {
     }
 
     @Test fun tes4x4HasWordOneLetterDoesExist() {
-        val classUnderTest = BoggleGame()
-        val board = classUnderTest.makeSquareBoard(s=
+        val board = BoggleGame.makeSquareBoard(s=
             "EYES" +
             "YELL" +
             "COME" +
