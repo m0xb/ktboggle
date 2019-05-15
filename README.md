@@ -20,8 +20,16 @@ Run both client and server in separate tabs and you can play against yourself.
 
 ## Testing
 
+### Unit tests
+
 ```
 gradle test
+```
+
+### Python client
+
+```
+python3 boggle_client.py localhost
 ```
 
 ## Protocol
