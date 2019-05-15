@@ -104,6 +104,7 @@ class Board(val letters: Array<Array<Char>>) {
         }
     }
 
+    // precondition: word.length > 0
     fun hasWord(word: String): Boolean {
         for (i in 0 until letters.size) {
             for (j in 0 until letters[i].size) {
@@ -115,12 +116,13 @@ class Board(val letters: Array<Array<Char>>) {
         return false
     }
 
+    // precondition: word.length > 0
     private fun hasWordFrom(word: String, coord: Pair<Int, Int>, used: Set<Pair<Int, Int>>): Boolean {
-        if (word.isEmpty()) {
-            return true
-        }
-        if (word[0] != letters[coord.first][coord.second]) {
+        if (word[0] != letters[coord.second][coord.first]) {
             return false
+        }
+        if (word.length == 1) {
+            return true
         }
         for (adjacent in adjacents(coord).subtract(used)) {
             // assert: adjacent not in (used | {coord})
